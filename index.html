@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TOOL_NAME}} | 5C Network Tool</title>
+
+    <!-- ======================== -->
+    <!--   EXTERNAL LIBRARIES     -->
+    <!-- ======================== -->
+    <!-- SheetJS (Excel read/write) — include ONLY if tool needs Excel -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script> -->
+
+    <!-- PapaParse (CSV parsing) — include ONLY if tool needs CSV -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script> -->
+
+    <!-- PDF-lib (PDF merge/split) — include ONLY if tool needs PDF manipulation -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script> -->
+
+    <!-- PDF.js (PDF reading) — include ONLY if tool needs PDF text extraction -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script> -->
+
+    <!-- ExcelJS (advanced Excel) — include ONLY if tool needs styled Excel output -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script> -->
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/{{TOOL_SLUG}}.css">
+</head>
+<body>
+    <!-- ======================== -->
+    <!--        HEADER            -->
+    <!-- ======================== -->
+    <div class="container">
+        <header class="header">
+            <div class="header-inner">
+                <div class="logo-box">
+                    <!-- 5C Network logo (base64 or external) -->
+                    <img src="" alt="5C Logo" class="header-logo">
+                </div>
+                <div>
+                    <h1 class="header-title">{{TOOL_NAME}}</h1>
+                    <p class="header-sub">{{TOOL_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- ======================== -->
+        <!--      MAIN CONTENT        -->
+        <!-- ======================== -->
+        <main class="main-content">
+
+            <!-- SECTION: File Upload -->
+            <section class="section" id="uploadSection">
+                <div class="section-title">Step 1: Upload File</div>
+                <div class="file-upload-area" id="dropZone">
+                    <div class="upload-icon">📊</div>
+                    <h3>Drop Your File Here</h3>
+                    <p class="upload-subtext">Supported: .xlsx, .xls, .csv, .pdf</p>
+                    <input type="file" id="fileInput" class="file-input" accept=".xlsx,.xls,.csv,.pdf">
+                    <label for="fileInput" class="file-input-label">📁 Browse Files</label>
+                    <p id="fileName" class="file-name-display"></p>
+                </div>
+
+                <div class="action-buttons" style="margin-top: 20px;">
+                    <button class="btn btn-primary" id="processBtn" disabled>
+                        🚀 Process
+                    </button>
+                </div>
+
+                <!-- Progress Bar -->
+                <div id="progressSection" class="hidden">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill">
+                            <span id="progressText">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: Results / Stats -->
+            <section class="section hidden" id="statsSection">
+                <div class="section-title">Processing Summary</div>
+                <div class="stats-grid" id="statsGrid"></div>
+            </section>
+
+            <!-- SECTION: Data Preview -->
+            <section class="section hidden" id="previewSection">
+                <div class="section-title">Preview</div>
+                <div class="preview-table-wrapper">
+                    <table class="preview-table" id="previewTable"></table>
+                </div>
+            </section>
+
+            <!-- SECTION: Export -->
+            <section class="section hidden" id="exportSection">
+                <div class="section-title">Export</div>
+                <div class="action-buttons">
+                    <button class="btn btn-success" id="downloadBtn">
+                        📥 Download Result
+                    </button>
+                    <button class="btn btn-warning" id="resetBtn">
+                        🔄 Process Another File
+                    </button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ======================== -->
+    <!--       SCRIPTS            -->
+    <!-- ======================== -->
+    <script src="js/base.js"></script>
+    <script src="js/{{TOOL_SLUG}}.js"></script>
+</body>
+</html>

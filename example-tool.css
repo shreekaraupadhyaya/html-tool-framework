@@ -1,0 +1,11 @@
+/* ============================================================
+   Tool-specific CSS: example-tool
+   Overrides / extends base.css for this specific tool only.
+   ============================================================ */
+
+/* Example: Customize section border color for this tool */
+/* .section { border-left-color: var(--brand-blue-dark); } */
+
+/* Example: Add a custom status indicator */
+/* .status-resolved { color: #38ef7d; font-weight: 600; } */
+/* .status-pending  { color: #f5576c; font-weight: 600; } */
